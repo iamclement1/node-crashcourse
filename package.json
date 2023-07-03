@@ -1,0 +1,18 @@
+{
+  "name": "crashcourse",
+  "version": "1.0.0",
+  "description": "node crash course",
+  "main": "file.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Nnamdi Azubuike",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
