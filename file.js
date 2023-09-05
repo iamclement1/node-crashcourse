@@ -36,6 +36,7 @@ if (!fs.existsSync('./assets')) {
 
 //deleting files
 if(fs.existsSync('./docs/deleteme.txt')) {
+   //unlink is used to delete files
    fs.unlink('./docs/deleteme.txt', (error) => {
       if(error){
          console.log(error);
