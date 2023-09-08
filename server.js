@@ -1,9 +1,9 @@
 const http = require('http');
 const fs = require('fs');
-// const _ = require('lodash');
+const _ = require('lodash');
 
 const server = http.createServer((req, res) => {
-   // console.log(req.url);
+   console.log(req.url, req.method);
    //lodash- 
    //getting a random number
    const num = _.random(0, 20);
@@ -27,17 +27,17 @@ const server = http.createServer((req, res) => {
          path += 'about.html';
          res.statusCode = 200;
          break;
-      case '/about-us': //setHeader when the user checks for about page 
-         res.statusCode = 301;
-         res.setHeader('Location', '/about');
-         res.end();
-         break;
+      // case '/about-us': //setHeader when the user checks for about page 
+      //    res.statusCode = 301;
+      //    res.setHeader('Location', '/about');
+      //    res.end();
+      //    break;
       default:
          path += '404.html';
          res.statusCode = 404; 
    }
 
-   // send html
+   // send html file
    fs.readFile(path, (err, data) => {
       if (err) {
          console.log(err);
@@ -51,8 +51,8 @@ const server = http.createServer((req, res) => {
 });
 
 
-//localhost: is the like the domain name on the web
+//localhost: is the like the domain name on the web e.g google.com i.e. listening to our local machine
 //port number are like doors through which internet connections can be made
 server.listen(3000, 'localhost', () => {
-   console.log('listening on port 3000');
+   console.log('listening for request on port 3000');
 }); 
